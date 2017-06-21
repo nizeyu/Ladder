@@ -30,16 +30,19 @@ public class Solution {
     }
     
     private void dfs(TreeNode root, int target, int sum, List<Integer> path, List<List<Integer>> results) {
+        // meet leaf
         if(root.left == null && root.right == null && sum == target) {
             results.add(new ArrayList<>(path));
         }
         
+        // go left
         if(root.left != null) {
             path.add(root.left.val);
             dfs(root.left, target, sum + root.left.val, path, results);
             path.remove(path.size() - 1);
         }
         
+        // go right
         if(root.right != null) {
             path.add(root.right.val);
             dfs(root.right, target, sum + root.right.val, path, results);
