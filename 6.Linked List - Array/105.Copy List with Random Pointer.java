@@ -25,15 +25,16 @@ public class Solution {
             p = clone.next;
         }
         
+        // 复制 random
         p = head;
         while (p != null) {
             if (p.random != null) {
                 p.next.random = p.random.next;
             }
-            
             p = p.next.next;
         }
         
+        // 还原
         p = head;
         RandomListNode newHead = head.next;
         while (p != null) {
