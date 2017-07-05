@@ -22,8 +22,6 @@ public class Solution {
             
             map.put(sum, i);
         }
-       
         return results;
-
     }
 }
