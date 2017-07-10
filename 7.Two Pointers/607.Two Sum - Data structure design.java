@@ -7,6 +7,7 @@ public class TwoSum {
     }
     
     // Add the number to an internal data structure.
+    // 猜测add操作会比较多, find 相对较少
     public void add(int number) {
         if (map.containsKey(number)) {
             map.put(number, map.get(number) + 1);
