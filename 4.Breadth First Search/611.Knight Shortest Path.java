@@ -43,6 +43,7 @@ public class Solution {
                     }
                     
                     if (!grid[t.x][t.y]) {
+                        // mark the point not accessible
                         grid[t.x][t.y] = true;
                         q.offer(t);
                     }
