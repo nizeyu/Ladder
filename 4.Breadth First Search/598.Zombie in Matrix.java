@@ -60,18 +60,16 @@ public class Solution {
                         continue;
                     }
                     
-                    if (grid[t.x][t.y] != PEOPLE) {
-                        continue;
+                    if (grid[t.x][t.y] == PEOPLE) {
+                        grid[t.x][t.y] = ZOMBIE;
+                        people--;
+                        
+                        if (people == 0) {
+                            return days;
+                        }
+                        
+                        q.offer(t);
                     }
-                    
-                    grid[t.x][t.y] = ZOMBIE;
-                    people--;
-                    
-                    if (people == 0) {
-                        return days;
-                    }
-                    
-                    q.offer(t);
                 }
             }
         }
