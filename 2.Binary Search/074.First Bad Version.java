@@ -1,3 +1,4 @@
+// Self
 /**
  * public class SVNRepo {
  *     public static boolean isBadVersion(int k);
@@ -11,12 +12,11 @@ class Solution {
      * @return: An integer which is the first bad version.
      */
     public int findFirstBadVersion(int n) {
-        // write your code here
-        
         SVNRepo svn = new SVNRepo();
         
-        int l = 0;
-		int r = n;
+        int l = 1;
+	int r = n;
+	    
         while(l < r) {
             int mid = l + (r - l) / 2;
             
