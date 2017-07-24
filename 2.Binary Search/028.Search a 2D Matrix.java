@@ -1,4 +1,4 @@
-//My Solution
+//Self
 public class Solution {
     /**
      * @param matrix, a list of lists of integers
@@ -6,41 +6,30 @@ public class Solution {
      * @return a boolean, indicate whether matrix contains target
      */
     public boolean searchMatrix(int[][] matrix, int target) {
-        // write your code here
-        if(matrix == null || matrix.length == 0) {
+        if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
             return false;
         }
         
-        return lowerbound(matrix, target);
-    }
-    
-    private boolean lowerbound (int[][] matrix, int target) {
         int m = matrix.length;
         int n = matrix[0].length;
         
-        int l = 0; 
-        int r = m * n - 1;
+        int l = 0;
+        int r = m * n;
         
-        while(l < r) {
+        while (l < r) {
             int mid = l + (r - l) / 2;
-            int i = mid / n;
-            int j = mid % n;
             
-            if (matrix[i][j] == target) {
-                return true;
-            } else if(matrix[i][j] > target) {
-                r = mid - 1;
+            if (target <= matrix[mid/n][mid%n]) {
+                r = mid;
             } else {
                 l = mid + 1;
             }
         }
         
-        if (matrix[l / n][l % n] == target) {
-            return true;
-        } else if (matrix[r / n][r % n] == target) {
-            return true;
+        if (l == m * n || matrix[l/n][l%n] != target) {
+            return false;
         }
         
-        return false;
+        return true;
     }
 }
