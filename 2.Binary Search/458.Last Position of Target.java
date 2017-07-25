@@ -1,4 +1,4 @@
-// Self
+// Self: upperBound
 public class Solution {
     /**
      * @param nums: An integer array sorted in ascending order
