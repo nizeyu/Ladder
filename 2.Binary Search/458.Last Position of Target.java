@@ -1,3 +1,4 @@
+// Self
 public class Solution {
     /**
      * @param nums: An integer array sorted in ascending order
@@ -5,26 +6,24 @@ public class Solution {
      * @return an integer
      */
     public int lastPosition(int[] nums, int target) {
-        // Write your code here
-        if(nums == null || nums.length == 0) {
+        if (nums == null || nums.length == 0) {
             return -1;
         }
         
-        return upperbound(nums, target);
-    }
-    
-    private static int upperbound(int[] nums, int target) {
-		int l = 0;
-		int r = nums.length;
-        while(l < r) {
+        int l = 0;
+        int r = nums.length;
+        
+        while (l < r) {
             int mid = l + (r - l) / 2;
-            if(target >= nums[mid])
-                l = mid + 1;
-            else
+            
+            if (target < nums[mid]) {
                 r = mid;
+            } else {
+                l = mid + 1;
+            }
         }
         
-        if(l > 0 && nums[l-1] == target) {
+        if (l > 0 && nums[l-1] == target) {
             return l - 1;
         }
         
