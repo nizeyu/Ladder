@@ -1,3 +1,4 @@
+// Self
 class Solution {
     /**
      * @param nums: A set of numbers.
@@ -29,7 +30,7 @@ class Solution {
         
         for (int i = offset; i < nums.length; i++) {
             // 确保前一个数没有被放进subset里面
-            if (i != 0 && i > offset && nums[i] == nums[i-1]) {
+            if (i > offset && nums[i] == nums[i-1]) {
                 continue;
             }
                 
