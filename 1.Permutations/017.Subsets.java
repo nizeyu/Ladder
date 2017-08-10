@@ -1,3 +1,4 @@
+// Self
 class Solution {
     /**
      * @param S: A set of numbers.
@@ -39,7 +40,7 @@ class Solution {
             // [] -> [1]
             // 把所有以[1]开头的子集都放到了 res 里
             backtracking(nums, i + 1, subset, results);
-            // backtracking: [3] -> []
+            // backtracking: [1] -> []
             subset.remove(subset.size() - 1);
         }
         // 3. 递归的出口
