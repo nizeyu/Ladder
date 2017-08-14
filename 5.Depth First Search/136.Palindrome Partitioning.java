@@ -1,3 +1,4 @@
+// Self
 public class Solution {
     /**
      * @param s: A string
