@@ -1,3 +1,51 @@
+// Self
+public class Solution {
+    /**
+     * @param candidates: A list of integers
+     * @param target:An integer
+     * @return: A list of lists of integers
+     */
+    public List<List<Integer>> combinationSum(int[] candidates, int target) {
+        List<List<Integer>> results = new ArrayList<>();
+        if (candidates == null || candidates.length == 0) {
+            return results;
+        }
+        
+        Arrays.sort(candidates);
+        
+        dfs(0, new ArrayList<Integer>(), target, candidates, results);
+        
+        return results;
+    }
+    
+    private void dfs(int start, List<Integer> combination, int sum, int[] candidates, List<List<Integer>> results) {
+        if (sum < 0) {
+            return;
+        }
+        
+        if (sum == 0) {
+            results.add(new ArrayList<>(combination));
+            return;
+        }
+        
+        for (int i = start; i < candidates.length; i++) {
+            if (sum - candidates[i] < 0) {
+                break;
+            }
+            if (i > 0 && candidates[i] == candidates[i-1]) {
+                continue;
+            }
+            
+            sum -= candidates[i];
+            combination.add(candidates[i]);
+            dfs(i, combination, sum, candidates, results);
+            sum += candidates[i];
+            combination.remove(combination.size() - 1);
+        }
+    }
+}
+
+// Example
 public class Solution {
     /**
      * @param candidates: A list of integers
