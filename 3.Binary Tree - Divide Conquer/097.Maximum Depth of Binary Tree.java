@@ -41,27 +41,29 @@ public class Solution {
  * }
  */
 public class Solution {
+    private int maxDepth;
     /**
      * @param root: The root of binary tree.
      * @return: An integer.
      */
-    public int depth;
     public int maxDepth(TreeNode root) {
-        depth = 0;
-        helper(root, 1);
-        return depth;
+        
+        maxDepth = 0;
+        getDepth(root, 1);
+        
+        return maxDepth;
     }
     
-    private void helper(TreeNode node, int curDepth) {
-        if(node == null) {
+    private void getDepth(TreeNode root, int curDepth) {
+        if (root == null) {
             return;
         }
         
-        if(curDepth > depth) {
-            depth = curDepth;
+        if (curDepth > maxDepth) {
+            maxDepth = curDepth;
         }
         
-        helper(node.left, curDepth + 1);
-        helper(node.right, curDepth + 1);
+        getDepth(root.left, curDepth + 1);
+        getDepth(root.right, curDepth + 1);
     }
 }
