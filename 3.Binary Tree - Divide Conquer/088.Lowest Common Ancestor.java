@@ -1,4 +1,4 @@
-//Version 1 : Divide & Conquer
+//Version: Divide & Conquer
 public class Solution {
     // 在root为根的二叉树中找A,B的LCA:
     // 如果找到了就返回这个LCA
