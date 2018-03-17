@@ -1,4 +1,5 @@
 // hashSum = 33 * hashSum + key[i];
+// 需要运用mod运算性质防止溢出
 class Solution {
     /**
      * @param key: A String you should hash
