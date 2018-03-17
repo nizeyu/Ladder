@@ -1,3 +1,4 @@
+// hashSum = 33 * hashSum + key[i];
 class Solution {
     /**
      * @param key: A String you should hash
